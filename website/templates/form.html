@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Add Purchase Record</h1>
+    <form method="POST" action="{{ url_for('main.add_purchase') }}">
+        <div class="form-row">
+            <label for="date">Date</label>
+            <input type="date" name="date" required>
+        </div>
+        <div class="form-row">
+            <label for="farmer_name">Farmer Name</label>
+            <input type="text" name="farmer_name" required>
+        </div>
+        <div class="form-row">
+            <label for="location">Location</label>
+            <input type="text" name="location" required>
+        </div>
+        <div class="form-row">
+            <label for="quantity">Quantity (kg)</label>
+            <input type="number" name="quantity" step="0.01" required>
+        </div>
+        <div class="form-row">
+            <label for="cost_per_kg">Cost per kg</label>
+            <input type="number" name="cost_per_kg" step="0.01" required>
+        </div>
+        <div class="form-row">
+            <label for="payment_method">Payment Method</label>
+            <input type="text" name="payment_method" required>
+        </div>
+        <input type="submit" value="Add Purchase">
+    </form>
+</div>
+{% endblock %}
